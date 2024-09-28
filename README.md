@@ -4,9 +4,23 @@
   </a>
 </p>
 
+# 使用c2w打包ffmpeg-cli进入wasm
+！！！ffmpeg-cli.wasm可在release页面下载！！！
+```sh
+# 打包/Package
+docker pull linuxserver/ffmpeg:version-7.0.2-cli
+c2w linuxserver/ffmpeg:version-7.0.2-cli /home/qsbye/ffmpeg-7.0.2-cli.wasm
+# 测试/Test
+curl https://wasmtime.dev/install.sh -sSf | bash
+wasmtime ffmpeg-7.0.2-cli.wasm
+wasmtime run --dir $PWD::/root ffmpeg-7.0.2-cli.wasm -- -i /root/sheep.mp3 /root/sheep.wav
+```
+优点：比ffmpeg.wasm更易使用。
+
 # ffmpeg.wasm
 
 ffmpeg.wasm is a pure Webassembly / Javascript port of FFmpeg. It enables video & audio record, convert and stream right inside browsers.
+
 
 [![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 [![Node Version](https://img.shields.io/node/v/@ffmpeg/ffmpeg.svg)](https://img.shields.io/node/v/@ffmpeg/ffmpeg.svg)
