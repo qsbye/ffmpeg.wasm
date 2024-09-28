@@ -5,7 +5,7 @@
 </p>
 
 # 使用c2w打包ffmpeg-cli进入wasm
-！！！ffmpeg-cli.wasm可在release页面下载！！！
+！！！ffmpeg-cli.wasm可在[https://gitee.com/qsbye/ffmpeg.wasm]的release页面下载！！！
 ```sh
 # 打包/Package
 docker pull linuxserver/ffmpeg:version-7.0.2-cli
